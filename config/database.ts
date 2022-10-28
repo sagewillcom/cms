@@ -1,16 +1,21 @@
-import path from 'path'
+const parse = require('pg-connection-string').parse
 
-export default ({ env }) => ({
+const { host, port, database, user, password } = parse(process.env.DATABASE_URL)
+
+export default () => ({
 	connection: {
-		client: 'sqlite',
+		client: 'postgres',
 		connection: {
-			filename: path.join(
-				__dirname,
-				'..',
-				'..',
-				env('DATABASE_FILENAME', '.tmp/data.db')
-			)
+			host,
+			port,
+			database,
+			user,
+			password,
+			ssl:
+				process.env.NODE_ENV === 'development'
+					? false
+					: { rejectUnauthorized: false }
 		},
-		useNullAsDefault: true
+		debug: false
 	}
 })
