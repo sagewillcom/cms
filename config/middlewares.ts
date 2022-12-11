@@ -7,7 +7,7 @@ export default [
 				useDefaults: true,
 				directives: {
 					'connect-src': ["'self'", 'https:'],
-					'img-src': ["'self'", 'data:', 'blob:', '*.digitaloceanspaces.com'],
+					'img-src': ["'self'", 'data:', 'blob:', '*.digitaloceanspaces.com', 'dl.airtable.com'],
 					'media-src': ["'self'", 'data:', 'blob:'],
 					upgradeInsecureRequests: null
 				}

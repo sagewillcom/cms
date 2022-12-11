@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Posts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "publication": {
+      "type": "enumeration",
+      "enum": [
+        "clearstair",
+        "wisercourse"
+      ]
+    },
+    "topic": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "topic"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "head.meta"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "posts"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "schema.faq"
+    }
+  }
+}
