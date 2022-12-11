@@ -1,8 +1,8 @@
 {
-	"name": "clearstair-cms",
+	"name": "sagewoll-cms",
 	"private": true,
 	"version": "0.1.0",
-	"description": "Clearstair's CMS",
+	"description": "Sagewill's CMS",
 	"scripts": {
 		"dev": "strapi develop",
 		"start": "strapi start",
